@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ApiGatewayTestApplication {
 
-	@Bean
-	public ServletRegistrationBean apiServlet() {
-		ServletRegistrationBean result = new ServletRegistrationBean(new ApiServlet());
-		result.addUrlMappings("/api");
-		return result;
-	}
+    @Bean
+    public ServletRegistrationBean apiServlet() {
+        ServletRegistrationBean result = new ServletRegistrationBean(new ApiServlet());
+        result.addUrlMappings("/api");
+        return result;
+    }
 
-	static ApplicationContext context;
+    static ApplicationContext context;
 
-	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(ApiGatewayTestApplication.class, args);
-		ApiContext.init(context);
-	}
+    public static void main(String[] args) {
+        ApplicationContext context = SpringApplication.run(ApiGatewayTestApplication.class, args);
+        ApiContext.init(context);
+    }
 }
